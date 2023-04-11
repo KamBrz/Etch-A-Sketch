@@ -23,7 +23,8 @@ body.appendChild(bottomHalf);
 
 let sideSize = 16;
 
-function createGrid() {
+function createGrid(sideSize) {
+    container.innerHTML = '';
     for (let i = 0; i < sideSize; i++) {
         const box = document.createElement('div');
         box.classList.add('horizontalBox');
@@ -32,8 +33,23 @@ function createGrid() {
             const innerBox = document.createElement('div');
             innerBox.classList.add('verticalBox');
             box.appendChild(innerBox);
+            innerBox.addEventListener('mouseover', () => {
+                innerBox.classList.add('mouseover');
+            })
         };
     };
 };
 
-createGrid();
+createGrid(sideSize);
+
+// Create a 'Clear' button
+
+const clearButton = document.createElement('button');
+clearButton.innerHTML = 'Clear';
+clearButton.classList.add('clearButton');
+bottomHalf.appendChild(clearButton);
+
+clearButton.addEventListener('click', () => {
+    let sideSize = prompt('What grid size would you like?')
+    createGrid(sideSize);
+})
