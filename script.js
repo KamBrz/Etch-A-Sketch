@@ -50,6 +50,29 @@ clearButton.classList.add('clearButton');
 bottomHalf.appendChild(clearButton);
 
 clearButton.addEventListener('click', () => {
-    let sideSize = prompt('What grid size would you like?')
-    createGrid(sideSize);
+    let sideSize = prompt('What grid size would you like?', 'Less than 100')
+    if (!isNaN(sideSize) && sideSize > 0 && sideSize < 100){
+        createGrid(sideSize);
+    }
+});
+
+// Create a 'Randomiser' button for onHover color
+
+const randomButton = document.createElement('button');
+randomButton.innerHTML = 'Randomise';
+randomButton.classList.add('clearButton');
+bottomHalf.appendChild(randomButton);
+
+const setBg = (element) => {
+    const randomColor = Math.floor(Math.random()*16777215).toString(16);
+    element.style.backgroundColor = "#" + randomColor;
+}
+
+randomButton.addEventListener('click', () => {
+    const innerBoxes = container.querySelectorAll('.verticalBox');
+    innerBoxes.forEach(innerBox => {
+        innerBox.addEventListener('mouseover', () => {
+            setBg(innerBox);
+        })
+    });
 })
