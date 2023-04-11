@@ -76,3 +76,19 @@ randomButton.addEventListener('click', () => {
         })
     });
 })
+
+// Create a 'Burn' button
+
+const burnButton = document.createElement('button');
+burnButton.innerHTML = 'Burn';
+burnButton.classList.add('clearButton');
+bottomHalf.appendChild(burnButton);
+
+burnButton.addEventListener('click', () => {
+    const innerBoxes = container.querySelectorAll('.verticalBox');
+    innerBoxes.forEach(innerBox => {
+        innerBox.addEventListener('mouseover', () => {
+            innerBox.style.opacity = (parseFloat(innerBox.style.opacity) || 0) + 0.1;
+        })
+    })
+})
