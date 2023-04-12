@@ -1,4 +1,3 @@
-
 // Create body elements and containers
 const body = document.querySelector('body');
 
@@ -20,7 +19,6 @@ bottomHalf.classList.add('bottomHalf');
 body.appendChild(bottomHalf);
 
 // Create grid based on sideSize
-
 let sideSize = 16;
 
 function createGrid(sideSize) {
@@ -43,7 +41,6 @@ function createGrid(sideSize) {
 createGrid(sideSize);
 
 // Create a 'Clear' button
-
 const clearButton = document.createElement('button');
 clearButton.innerHTML = 'Clear';
 clearButton.classList.add('clearButton');
@@ -57,7 +54,6 @@ clearButton.addEventListener('click', () => {
 });
 
 // Create a 'Randomiser' button for onHover color
-
 const randomButton = document.createElement('button');
 randomButton.innerHTML = 'Randomise';
 randomButton.classList.add('clearButton');
@@ -78,7 +74,6 @@ randomButton.addEventListener('click', () => {
 })
 
 // Create a 'Burn' button
-
 const burnButton = document.createElement('button');
 burnButton.innerHTML = 'Burn';
 burnButton.classList.add('clearButton');

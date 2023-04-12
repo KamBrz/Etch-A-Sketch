@@ -1,6 +1,7 @@
 body {
-    background-color: rgb(248, 196, 175);
+    background-color: lightgray;
     margin: 0px;
+    padding: 0px;
 }
 
 .topHalf {
@@ -24,6 +25,7 @@ body {
     border: 1px black;
     border-style: solid;
     display: flex;
+    box-shadow: 5px 5px 10px rgb(141, 141, 141);
 }
 
 .horizontalBox {
@@ -37,10 +39,33 @@ body {
     flex: 1;
     border: 1px lightgrey;
     border-style: solid;
-    
+}
+
+.mouseover {
+    background-color: black;
 }
 
 .bottomHalf {
     background-color: lightgray;
     height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.clearButton {
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: rgb(206, 90, 113);
+    color: white;
+    font-size: 20px;
+}
+
+.clearButton:active {
+    background-color:rgb(131, 58, 72);
+    box-shadow: 5px 10px 5px rgb(107, 47, 59) inset;
 }
